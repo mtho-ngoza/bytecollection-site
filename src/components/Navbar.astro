@@ -1,0 +1,78 @@
+---
+const navLinks = [
+  { href: "#services", label: "Services" },
+  { href: "#work", label: "Our Work" },
+  { href: "#about", label: "About" },
+  { href: "#process", label: "Process" },
+];
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-gray-950/80 backdrop-blur-lg border-b border-gray-800">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center font-bold text-xl">
+        B
+      </div>
+      <span class="text-xl font-semibold">Byte Collection</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+      {navLinks.map((link) => (
+        <a href={link.href} class="hover:text-white transition-colors duration-200">
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="#contact"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full transition-colors duration-200"
+      >
+        Get in Touch
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 text-gray-400 hover:text-white"
+      aria-label="Toggle menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800 bg-gray-950/95 backdrop-blur-lg">
+    <div class="px-6 py-4 space-y-4">
+      {navLinks.map((link) => (
+        <a href={link.href} class="block text-gray-400 hover:text-white transition-colors duration-200">
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="#contact"
+        class="block bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-full text-center transition-colors duration-200"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close menu when clicking a link
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>

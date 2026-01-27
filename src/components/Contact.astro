@@ -1,0 +1,78 @@
+---
+
+---
+
+<section id="contact" class="py-24 px-6 bg-gradient-to-b from-gray-900/50 to-gray-950 section-divider">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+      Ready to Build Something Great?
+    </h2>
+    <p class="text-gray-400 text-xl mb-10">
+      Let's discuss your project. Whether you're a startup or an established
+      business, we'd love to hear about your challenges and how we can help.
+    </p>
+
+    <div class="glass-card rounded-2xl p-10 max-w-2xl mx-auto">
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="space-y-6"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden">
+          <label>
+            Don't fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all duration-200"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all duration-200"
+          />
+        </div>
+        <input
+          type="text"
+          name="project-type"
+          placeholder="Project Type (e.g., Web App, API, etc.)"
+          class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all duration-200"
+        />
+        <textarea
+          name="message"
+          placeholder="Tell us about your project..."
+          rows="4"
+          required
+          class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all duration-200 resize-none"
+        ></textarea>
+        <button
+          type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-medium transition-all duration-200 glow hover:scale-[1.02]"
+        >
+          Send Message
+        </button>
+      </form>
+
+      <div class="mt-8 pt-8 border-t border-gray-800">
+        <p class="text-gray-500 text-sm mb-4">Or reach out directly:</p>
+        <a
+          href="mailto:mthobisi@bytecollection.co.za"
+          class="text-blue-500 hover:text-blue-400 transition-colors duration-200"
+        >
+          mthobisi@bytecollection.co.za
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

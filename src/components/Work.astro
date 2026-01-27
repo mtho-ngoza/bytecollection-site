@@ -1,0 +1,90 @@
+---
+const projects = [
+  {
+    title: "Football Genic",
+    description:
+      "A comprehensive football statistics and analytics platform connecting fans with real-time match data, player stats, and league standings across multiple competitions.",
+    category: "Sports Tech",
+    type: "Web App",
+    features: ["Live Scores", "Player Analytics", "Match Predictions"],
+    gradient: "from-green-600/20 to-emerald-900/40",
+    initials: "FG",
+  },
+  {
+    title: "Mzansi Gigs",
+    description:
+      "A South African gig economy platform connecting freelancers with local businesses. Features secure payments, verified profiles, and a robust review system.",
+    category: "Marketplace",
+    type: "Platform",
+    features: ["Job Matching", "Secure Payments", "Review System"],
+    gradient: "from-purple-600/20 to-pink-900/40",
+    initials: "MG",
+  },
+];
+---
+
+<section id="work" class="py-24 px-6 bg-gray-900/50 section-divider">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="text-blue-500 text-sm font-medium tracking-wider uppercase">
+        Our Work
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold mt-4">
+        Projects That Delivered Results
+      </h2>
+      <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+        Real solutions for real businesses. Here's how we've helped our clients
+        succeed.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {projects.map((project) => (
+        <div class="glass-card rounded-2xl overflow-hidden group hover:border-gray-600 transition-all duration-300">
+          <div class={`h-64 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative`}>
+            <div class="text-6xl font-bold text-white/10">{project.initials}</div>
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent" />
+          </div>
+          <div class="p-8">
+            <div class="flex items-center gap-2 mb-3">
+              <span class={`text-xs px-3 py-1 rounded-full ${
+                project.category === "Sports Tech"
+                  ? "bg-green-600/20 text-green-400"
+                  : "bg-purple-600/20 text-purple-400"
+              }`}>
+                {project.category}
+              </span>
+              <span class="text-xs bg-gray-700 text-gray-300 px-3 py-1 rounded-full">
+                {project.type}
+              </span>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">{project.title}</h3>
+            <p class="text-gray-400 text-sm mb-4">{project.description}</p>
+            <div class="border-t border-gray-800 pt-4 mt-4">
+              <div class="text-sm text-gray-500 mb-2">Key Features:</div>
+              <div class="flex flex-wrap gap-2">
+                {project.features.map((feature) => (
+                  <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href="#contact"
+        class="inline-flex items-center gap-2 text-blue-500 hover:text-blue-400 font-medium transition-colors duration-200"
+      >
+        Want to be our next success story?
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

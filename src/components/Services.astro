@@ -1,0 +1,105 @@
+---
+const services = [
+  {
+    title: "Custom Web Applications",
+    description:
+      "Bespoke web platforms tailored to your business workflows. From dashboards to customer portals, we build applications that automate and accelerate.",
+    features: ["Admin Dashboards", "E-commerce Platforms", "Booking Systems"],
+    icon: "desktop",
+    color: "blue",
+  },
+  {
+    title: "Mobile-First Solutions",
+    description:
+      "Responsive web apps and progressive web applications (PWAs) that work flawlessly on any device. Reach your customers wherever they are.",
+    features: ["Progressive Web Apps", "Responsive Design", "Offline Capability"],
+    icon: "mobile",
+    color: "purple",
+  },
+  {
+    title: "API & System Integration",
+    description:
+      "Connect your existing tools and databases. We build APIs and integrations that make your systems talk to each other seamlessly.",
+    features: ["REST & GraphQL APIs", "Payment Gateways", "Third-Party Integrations"],
+    icon: "code",
+    color: "cyan",
+  },
+];
+
+const colorClasses = {
+  blue: {
+    bg: "bg-blue-600/20",
+    bgHover: "group-hover:bg-blue-600/30",
+    text: "text-blue-500",
+    border: "hover:border-blue-500/30",
+  },
+  purple: {
+    bg: "bg-purple-600/20",
+    bgHover: "group-hover:bg-purple-600/30",
+    text: "text-purple-500",
+    border: "hover:border-purple-500/30",
+  },
+  cyan: {
+    bg: "bg-cyan-600/20",
+    bgHover: "group-hover:bg-cyan-600/30",
+    text: "text-cyan-500",
+    border: "hover:border-cyan-500/30",
+  },
+};
+---
+
+<section id="services" class="py-24 px-6 section-divider">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="text-blue-500 text-sm font-medium tracking-wider uppercase">
+        What We Do
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold mt-4">Services Built for Growth</h2>
+      <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+        We don't just write code. We solve business problems with technology that
+        scales.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {services.map((service) => {
+        const colors = colorClasses[service.color as keyof typeof colorClasses];
+        return (
+          <div class={`glass-card rounded-2xl p-8 transition-all duration-300 group ${colors.border}`}>
+            <div class={`w-14 h-14 ${colors.bg} rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${colors.bgHover}`}>
+              {service.icon === "desktop" && (
+                <svg class={`w-7 h-7 ${colors.text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              )}
+              {service.icon === "mobile" && (
+                <svg class={`w-7 h-7 ${colors.text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              )}
+              {service.icon === "code" && (
+                <svg class={`w-7 h-7 ${colors.text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              )}
+            </div>
+            <h3 class="text-xl font-semibold mb-3">{service.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+              {service.description}
+            </p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              {service.features.map((feature) => (
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

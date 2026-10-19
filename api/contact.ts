@@ -20,7 +20,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Send email via Resend
     const { data, error } = await resend.emails.send({
       from: 'Byte Collection <onboarding@resend.dev>', // Update this after verifying your domain
-      to: ['mthobisimthembu15@gmail.com'], // Your email to receive contact form submissions
+      to: ['bytecollection23@gmail.com'],
       replyTo: email,
       subject: `New Contact: ${projectType || 'General Inquiry'} from ${name}`,
       html: `

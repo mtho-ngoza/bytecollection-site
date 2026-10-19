@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "15+", label: "Projects Delivered" },
-  { value: "3+", label: "Countries Served" },
-  { value: "100%", label: "Client Satisfaction" },
+  { value: "7+", label: "Years Enterprise Experience" },
+  { value: "2000+", label: "Automated Tests Shipped" },
+  { value: "86%+", label: "Code Coverage Achieved" },
 ];
 
 export default function Hero() {
@@ -22,7 +22,7 @@ export default function Hero() {
           >
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
             <span className="text-gray-400">
-              CIPC Registered Company | South Africa & Beyond
+              AWS Certified | Enterprise Experience | CIPC Registered
             </span>
           </motion.div>
 
@@ -33,9 +33,8 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold leading-tight mb-6"
           >
-            We Build{" "}
-            <span className="gradient-text">Digital Products</span> That Drive
-            Business Growth
+            Enterprise-Grade{" "}
+            <span className="gradient-text">Software Engineering</span> for Growing Businesses
           </motion.h1>
 
           {/* Subheadline */}
@@ -45,10 +44,9 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed"
           >
-            Byte Collection is a South African software development agency
-            helping businesses locally and globally transform their operations
-            with custom web applications, mobile solutions, and intelligent
-            systems.
+            Byte Collection brings software engineering expertise from BMW, WesBank and FNB
+            to businesses that need production-ready applications. Full-stack development
+            from concept to deployment, with the quality standards of enterprise environments.
           </motion.p>
 
           {/* CTAs */}

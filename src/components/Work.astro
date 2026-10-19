@@ -1,25 +1,27 @@
 ---
-const projects = [
-  {
-    title: "Football Genic",
-    description:
-      "A modern e-commerce platform for football equipment. Full shopping experience with product variants, cart management, checkout flow, and admin dashboard.",
-    category: "E-commerce",
-    type: "Web App",
-    features: ["Product Catalog", "Cart & Checkout", "Admin Dashboard"],
-    gradient: "from-green-600/20 to-emerald-900/40",
-    initials: "FG",
-  },
-  {
-    title: "Mzansi Gigs",
-    description:
-      "A South African gig economy platform connecting freelancers with local businesses. Features secure payments, verified profiles, and a robust review system.",
-    category: "Marketplace",
-    type: "Platform",
-    features: ["Job Matching", "Secure Payments", "Review System"],
-    gradient: "from-purple-600/20 to-pink-900/40",
-    initials: "MG",
-  },
+const metrics = [
+  { value: "2090+", label: "Automated Tests" },
+  { value: "86%+", label: "Code Coverage" },
+  { value: "100%", label: "TypeScript" },
+  { value: "LIVE", label: "Payments" },
+];
+
+const techStack = [
+  "Next.js 15",
+  "TypeScript",
+  "Firebase",
+  "TradeSafe API",
+  "Google Vision",
+  "Tailwind CSS",
+];
+
+const features = [
+  { title: "Secure Escrow Payments", description: "TradeSafe integration with Standard Bank backing. EFT, card, SnapScan, Ozow." },
+  { title: "ID Verification", description: "OCR-powered SA ID verification using Google Cloud Vision API." },
+  { title: "Real-Time Messaging", description: "Direct chat between employers and workers with unread indicators." },
+  { title: "Trust & Safety", description: "Trust scoring, mutual reviews, check-in/check-out GPS tracking, emergency alerts." },
+  { title: "Multi-Language", description: "Full isiZulu translation with 500+ strings. Built for South Africa." },
+  { title: "Offline-Ready PWA", description: "2G/3G optimised. Installable app with offline support." },
 ];
 ---
 
@@ -27,52 +29,100 @@ const projects = [
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16">
       <span class="text-blue-500 text-sm font-medium tracking-wider uppercase">
-        Our Work
+        Case Study
       </span>
       <h2 class="text-4xl md:text-5xl font-bold mt-4">
-        Projects That Delivered Results
+        MzansiGig: From Concept to Production
       </h2>
       <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
-        Real solutions for real businesses. Here's how we've helped our clients
-        succeed.
+        A full-stack gig economy platform built from scratch — handling real payments,
+        real users, and real South African market requirements.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      {projects.map((project) => (
-        <div class="glass-card rounded-2xl overflow-hidden group hover:border-gray-600 transition-all duration-300">
-          <div class={`h-64 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative`}>
-            <div class="text-6xl font-bold text-white/10">{project.initials}</div>
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent" />
-          </div>
-          <div class="p-8">
-            <div class="flex items-center gap-2 mb-3">
-              <span class={`text-xs px-3 py-1 rounded-full ${
-                project.category === "E-commerce"
-                  ? "bg-green-600/20 text-green-400"
-                  : "bg-purple-600/20 text-purple-400"
-              }`}>
-                {project.category}
-              </span>
-              <span class="text-xs bg-gray-700 text-gray-300 px-3 py-1 rounded-full">
-                {project.type}
-              </span>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">{project.title}</h3>
-            <p class="text-gray-400 text-sm mb-4">{project.description}</p>
-            <div class="border-t border-gray-800 pt-4 mt-4">
-              <div class="text-sm text-gray-500 mb-2">Key Features:</div>
-              <div class="flex flex-wrap gap-2">
-                {project.features.map((feature) => (
-                  <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">
-                    {feature}
-                  </span>
-                ))}
+    <!-- Main Case Study Card -->
+    <div class="glass-card rounded-2xl overflow-hidden">
+      <!-- Hero Image Area -->
+      <div class="h-72 bg-gradient-to-br from-purple-600/30 via-blue-600/20 to-pink-900/40 flex items-center justify-center relative">
+        <div class="text-center">
+          <div class="text-7xl font-bold text-white/20 mb-2">MzansiGig</div>
+          <div class="text-gray-400">mzansigigs.co.za</div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent" />
+      </div>
+
+      <div class="p-8 md:p-12">
+        <!-- Metrics Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 pb-10 border-b border-gray-800">
+          {metrics.map((metric) => (
+            <div class="text-center">
+              <div class={`text-3xl font-bold ${metric.label === "LIVE" ? "text-green-500" : "gradient-text"}`}>
+                {metric.value}
               </div>
+              <div class="text-gray-500 text-sm mt-1">{metric.label}</div>
             </div>
+          ))}
+        </div>
+
+        <!-- Problem / Solution -->
+        <div class="grid md:grid-cols-2 gap-10 mb-10">
+          <div>
+            <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+              <span class="w-8 h-8 bg-red-600/20 rounded-lg flex items-center justify-center">
+                <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </span>
+              The Problem
+            </h3>
+            <p class="text-gray-400 leading-relaxed">
+              South Africa's gig economy needed a platform built for local realities:
+              township coverage, 2G/3G networks, trust in a low-trust environment,
+              and secure payments that work for the unbanked.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+              <span class="w-8 h-8 bg-green-600/20 rounded-lg flex items-center justify-center">
+                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              The Solution
+            </h3>
+            <p class="text-gray-400 leading-relaxed">
+              A full-stack platform with escrow payments (TradeSafe),
+              ID verification, trust scoring, offline capability, and multi-language support —
+              engineered to enterprise standards with 86%+ test coverage.
+            </p>
           </div>
         </div>
-      ))}
+
+        <!-- Features Grid -->
+        <div class="mb-10">
+          <h3 class="text-xl font-semibold mb-6">What We Built</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {features.map((feature) => (
+              <div class="bg-gray-800/30 rounded-xl p-5">
+                <h4 class="font-medium mb-2">{feature.title}</h4>
+                <p class="text-gray-500 text-sm">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="pt-8 border-t border-gray-800">
+          <h3 class="text-sm text-gray-500 mb-4">Tech Stack</h3>
+          <div class="flex flex-wrap gap-2">
+            {techStack.map((tech) => (
+              <span class="text-sm bg-gray-800 text-gray-300 px-4 py-2 rounded-full">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="text-center mt-12">
@@ -80,7 +130,7 @@ const projects = [
         href="#contact"
         class="inline-flex items-center gap-2 text-blue-500 hover:text-blue-400 font-medium transition-colors duration-200"
       >
-        Want to be our next success story?
+        Ready to build something like this?
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
